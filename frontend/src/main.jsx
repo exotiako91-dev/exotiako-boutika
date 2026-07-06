@@ -1,0 +1,9 @@
+PORT=5000
+FRONTEND_URL=http://localhost:5173
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=votre-email@gmail.com
+SMTP_PASS=mot-de-passe-application
+MAIL_FROM=ExoTiako <votre-email@gmail.com>
+MAIL_TO=votre-email@gmail.com
