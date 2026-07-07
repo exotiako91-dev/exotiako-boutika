@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExoTiako - Produits exotiques</title>
+  <meta name="description" content="Goûtez nos spécialités exotiques venant des îles et de tout horizon." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="Accueil ExoTiako">
+        <span class="brand-icon">🌴</span>
+        <span>ExoTiako</span>
+      </a>
+      <button class="cart-button" id="openCartBtn" type="button" aria-label="Ouvrir le panier">
+        🛒 Panier <span id="cartCount">0</span>
+      </button>
+    </nav>
+
+    <section class="hero-content" id="top">
+      <p class="eyebrow">Saveurs des îles · Fait maison · À commander</p>
+      <h1>ExoTiako</h1>
+      <p class="subtitle">Goûtez nos spécialités exotiques venant des îles et de tout horizon.</p>
+      <div class="hero-actions">
+        <a href="#produits" class="primary-link">Voir les produits</a>
+        <button class="secondary-link" id="openCartBtnHero" type="button">Voir mon panier</button>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <h2>Une vitrine simple pour commander vos envies exotiques</h2>
+        <p>Choisissez vos produits, ajustez les quantités et préparez votre commande. Pour cette première version, l’envoi se fait directement par email.</p>
+      </div>
+      <div class="intro-card">
+        <strong>Commande rapide</strong>
+        <span>Panier local + email pré-rempli</span>
+      </div>
+    </section>
+
+    <section class="filters" aria-label="Filtres produits">
+      <button class="filter active" data-category="all" type="button">Tous</button>
+      <button class="filter" data-category="boisson" type="button">Boissons</button>
+      <button class="filter" data-category="sale" type="button">Salés</button>
+      <button class="filter" data-category="vegan" type="button">Vegan</button>
+    </section>
+
+    <section class="products-section" id="produits">
+      <div class="section-title">
+        <p class="eyebrow">Notre sélection</p>
+        <h2>Produits disponibles</h2>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+    </section>
+  </main>
+
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+    <div class="cart-backdrop" id="closeCartBackdrop"></div>
+    <div class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <h2 id="cartTitle">Votre panier</h2>
+        <button class="icon-button" id="closeCartBtn" type="button" aria-label="Fermer le panier">×</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Total estimé</span>
+          <strong id="cartTotal">0,00 €</strong>
+        </div>
+        <button class="checkout-button" id="checkoutBtn" type="button">Commander par email</button>
+        <button class="clear-button" id="clearCartBtn" type="button">Vider le panier</button>
+      </div>
+    </div>
+  </aside>
+
+  <dialog class="product-modal" id="productModal">
+    <button class="modal-close" id="closeModalBtn" type="button" aria-label="Fermer">×</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <footer class="footer">
+    <strong>ExoTiako</strong>
+    <span>Produits exotiques · Commande artisanale · Version vitrine</span>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

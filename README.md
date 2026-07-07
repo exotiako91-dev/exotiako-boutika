@@ -1,17 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#c98d2e"/>
-      <stop offset="1" stop-color="#76a857"/>
-    </linearGradient>
-    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-opacity=".25"/></filter>
-  </defs>
-  <rect width="900" height="650" fill="url(#g)"/>
-  <circle cx="735" cy="100" r="120" fill="rgba(255,255,255,.2)"/>
-  <circle cx="120" cy="520" r="160" fill="rgba(255,255,255,.16)"/>
-  <g filter="url(#shadow)">
-    <rect x="170" y="165" rx="42" ry="42" width="560" height="320" fill="rgba(255,255,255,.88)"/>
-    <text x="450" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="74" font-weight="800" fill="#26150d">Nem</text>
-    <text x="450" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#c98d2e">Vegan</text>
-  </g>
-</svg>
+# ExoTiako - version statique
+
+Site vitrine de produits exotiques en HTML, CSS et JavaScript, sans Node.js.
+
+## Tester localement
+
+Ouvrir directement `index.html` dans le navigateur.
+
+Ou depuis le terminal :
+
+```bash
+python3 -m http.server 8000
+```
+
+Puis ouvrir :
+
+```txt
+http://localhost:8000
+```
+
+## Modifier l'email de commande
+
+Dans `script.js`, remplacer :
+
+```js
+const sellerEmail = "votre-email@example.com";
+```
+
+par votre adresse email.
+
+## Modifier les produits
+
+Les produits sont dans `products.js`.
+
+## Publier sur GitHub Pages
+
+Copier tout le contenu de ce dossier à la racine du dépôt GitHub, puis :
+
+```bash
+git add .
+git commit -m "Ajout version statique ExoTiako"
+git push origin main
+```
