@@ -30,53 +30,35 @@ const PRODUCTS = [
     description: "Une spécialité croustillante et conviviale, parfaite pour accompagner les moments en famille ou entre amis."
   },
   {
-    id: "sambos-legumes",
-    name: "Sambos aux légumes",
-    category: "vegan",
+    id: "sambos",
+    name: "Sambos",
+    category: "sale",
     price: 1.8,
     unit: "pièce",
     image: "assets/images/produits/sambos-legumes.png",
-    short: "Sambos croustillants garnis de légumes parfumés.",
-    description: "Des sambos aux légumes, dorés et croustillants, avec une farce équilibrée et parfumée."
+    short: "Sambos croustillants avec plusieurs garnitures au choix.",
+    description: "Choisissez votre garniture : végétarien, poisson, poulet ou viande. Les sambos sont dorés, croustillants et préparés pour une commande conviviale.",
+    variants: [
+      { id: "vegetarien", name: "Végétarien", price: 1.8, image: "assets/images/produits/sambos-legumes.png" },
+      { id: "poisson", name: "Poisson", price: 2.0, image: "assets/images/produits/sambos-poissons.png" },
+      { id: "poulet", name: "Poulet", price: 2.0, image: "assets/images/produits/sambos-poissons.png" },
+      { id: "viande", name: "Viande", price: 2.1, image: "assets/images/produits/sambos-poissons.png" }
+    ]
   },
   {
-    id: "sambos-poissons",
-    name: "Sambos aux poissons",
+    id: "nem",
+    name: "Nem",
     category: "sale",
-    price: 2.0,
-    unit: "pièce",
-    image: "assets/images/produits/sambos-poissons.png",
-    short: "Sambos au poisson, épicés juste comme il faut.",
-    description: "Une version savoureuse au poisson, idéale pour découvrir des saveurs exotiques authentiques."
-  },
-  {
-    id: "nem-vegan",
-    name: "Nem vegan",
-    category: "vegan",
     price: 1.7,
     unit: "pièce",
     image: "assets/images/produits/nem-vegan.png",
-    short: "Nem végétal croustillant, léger et gourmand.",
-    description: "Un nem vegan croustillant, garni de légumes et préparé sans produit animal."
-  },
-  {
-    id: "nem-poulet",
-    name: "Nem au poulet",
-    category: "sale",
-    price: 1.9,
-    unit: "pièce",
-    image: "assets/images/produits/nem-poulet.png",
-    short: "Nem au poulet, doré et savoureux.",
-    description: "Un nem au poulet généreux, parfait pour une commande familiale ou un plateau apéritif."
-  },
-  {
-    id: "nem-viandes",
-    name: "Nem aux viandes",
-    category: "sale",
-    price: 2.0,
-    unit: "pièce",
-    image: "assets/images/produits/nem-viandes.png",
-    short: "Nem aux viandes, croustillant et gourmand.",
-    description: "Un nem aux viandes avec une farce savoureuse, idéal pour compléter votre panier exotique."
+    short: "Nems dorés avec plusieurs versions au choix.",
+    description: "Choisissez votre version : végétarien, poisson, poulet ou viande. Des nems croustillants, pratiques pour composer un plateau ou une commande familiale.",
+    variants: [
+      { id: "vegetarien", name: "Végétarien", price: 1.7, image: "assets/images/produits/nem-vegan.png" },
+      { id: "poisson", name: "Poisson", price: 1.9, image: "assets/images/produits/nem-vegan.png" },
+      { id: "poulet", name: "Poulet", price: 1.9, image: "assets/images/produits/nem-poulet.png" },
+      { id: "viande", name: "Viande", price: 2.0, image: "assets/images/produits/nem-viandes.png" }
+    ]
   }
 ];

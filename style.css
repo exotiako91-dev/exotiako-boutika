@@ -269,3 +269,86 @@ main { padding: 34px clamp(16px, 4vw, 56px) 70px; }
   .hero-actions > * { width: 100%; text-align: center; }
   .intro > div:first-child, .intro-card { padding: 20px; }
 }
+
+/* Effet 3D dynamique pour le titre ExoTiako */
+.title-3d {
+  position: relative;
+  display: inline-block;
+  font-weight: 950;
+  letter-spacing: -0.06em;
+  color: #fff7dd;
+  text-shadow:
+    1px 1px 0 #f5b23f,
+    2px 2px 0 #ec8c18,
+    3px 3px 0 #db6411,
+    4px 4px 0 #a8420c,
+    8px 12px 24px rgba(0, 0, 0, .35);
+  transform: perspective(900px) rotateX(8deg) rotateY(-9deg);
+  animation: titleFloat3D 4.5s ease-in-out infinite;
+}
+
+.title-3d span {
+  display: inline-block;
+  background: linear-gradient(90deg, #fff8d7, #ffd166, #ff8a00, #fff8d7);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: titleShine 3.8s linear infinite;
+}
+
+.title-3d::after {
+  content: "ExoTiako";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: rgba(7, 56, 33, .45);
+  filter: blur(10px);
+  transform: translate(12px, 18px) scale(.98);
+}
+
+.brand-text {
+  text-shadow: 1px 1px 0 #f5b23f, 2px 2px 0 #a8420c;
+}
+
+.variant-note {
+  margin-top: 10px !important;
+  font-size: .88rem;
+  color: var(--green) !important;
+  font-weight: 800;
+}
+
+.variant-box {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 6px;
+}
+
+.variant-box label {
+  font-weight: 900;
+  color: var(--green-dark);
+}
+
+.variant-box select {
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 13px 14px;
+  background: white;
+  font: inherit;
+  font-weight: 800;
+  color: var(--green-dark);
+}
+
+@keyframes titleFloat3D {
+  0%, 100% { transform: perspective(900px) rotateX(8deg) rotateY(-9deg) translateY(0); }
+  50% { transform: perspective(900px) rotateX(4deg) rotateY(8deg) translateY(-10px); }
+}
+
+@keyframes titleShine {
+  0% { background-position: 0% center; }
+  100% { background-position: 220% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-3d, .title-3d span { animation: none; }
+}
