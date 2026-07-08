@@ -3,90 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ExoTiako - Produits exotiques</title>
-  <meta name="description" content="Goûtez nos spécialités exotiques venant des îles et de tout horizon." />
+  <title>ExoTiako - Saveurs exotiques de Madagascar</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav class="nav">
-      <a class="brand" href="#top" aria-label="Accueil ExoTiako">
-        <span class="brand-icon">🌴</span>
-        <span class="brand-text">ExoTiako</span>
-      </a>
-      <button class="cart-button" id="openCartBtn" type="button" aria-label="Ouvrir le panier">
-        🛒 Panier <span id="cartCount">0</span>
-      </button>
-    </nav>
-
-    <section class="hero-content" id="top">
-      <p class="eyebrow">Saveurs des îles · Fait maison · À commander</p>
-      <h1 class="title-3d" aria-label="ExoTiako"><span>ExoTiako</span></h1>
-      <p class="subtitle">Goûtez nos spécialités exotiques venant des îles et de tout horizon.</p>
-      <div class="hero-actions">
-        <a href="#produits" class="primary-link">Voir les produits</a>
-        <button class="secondary-link" id="openCartBtnHero" type="button">Voir mon panier</button>
-      </div>
-    </section>
+  <header class="top-strip">
+    <span>🚚 Livraison rapide à domicile</span>
+    <span>🌿 Produits exotiques faits maison</span>
+    <span>⭐ Qualité • Saveur • Authenticité</span>
   </header>
 
-  <main>
-    <section class="intro">
+  <section class="hero">
+    <div class="brand">
+      <img src="images/logo.png" alt="Logo ExoTiako" class="logo" />
       <div>
-        <h2>Une vitrine simple pour commander vos envies exotiques</h2>
-        <p>Choisissez vos produits, ajustez les quantités et préparez votre commande. Pour cette première version, l’envoi se fait directement par email.</p>
+        <h2>Exo<span>Tiako</span></h2>
+        <p>Saveurs exotiques de Madagascar</p>
       </div>
-      <div class="intro-card">
-        <strong>Commande rapide</strong>
-        <span>Panier local + email pré-rempli</span>
+    </div>
+
+    <h1 class="title-3d">ExoTiako</h1>
+
+    <div class="hero-actions">
+      <button class="icon-btn" id="searchBtn" title="Rechercher">🔍</button>
+      <button class="cart-mini" id="openCartBtn">
+        🛒 <strong id="cartCount">0</strong>
+        <span>Panier<br><b id="cartTotalMini">0,00 €</b></span>
+      </button>
+    </div>
+  </section>
+
+  <nav class="nav">
+    <a href="#" class="active">🏠 Accueil</a>
+    <a href="#products">▦ Produits</a>
+    <a href="#cartSection">🛒 Panier</a>
+    <a href="#about">👥 À propos</a>
+    <a href="#contact">ⓘ Contact</a>
+  </nav>
+
+  <main>
+    <section class="intro" id="products">
+      <h2>🌿 Nos produits</h2>
+      <p>Découvrez nos spécialités exotiques préparées avec soin et passion.</p>
+      <input id="searchInput" class="search-input" type="search" placeholder="Rechercher un produit..." />
+    </section>
+
+    <section class="grid" id="productGrid"></section>
+
+    <section class="cart-section" id="cartSection">
+      <h2>🛒 Votre panier</h2>
+      <div id="cartItems" class="cart-items empty">Votre panier est vide.</div>
+      <div class="cart-footer">
+        <strong>Total : <span id="cartTotal">0,00 €</span></strong>
+        <button id="orderBtn" class="primary">Commander par mail</button>
       </div>
     </section>
 
-    <section class="filters" aria-label="Filtres produits">
-      <button class="filter active" data-category="all" type="button">Tous</button>
-      <button class="filter" data-category="boisson" type="button">Boissons</button>
-      <button class="filter" data-category="sale" type="button">Salés</button>
-          </section>
-
-    <section class="products-section" id="produits">
-      <div class="section-title">
-        <p class="eyebrow">Notre sélection</p>
-        <h2>Produits disponibles</h2>
-      </div>
-      <div class="products-grid" id="productsGrid"></div>
+    <section class="about" id="about">
+      <h2>À propos d’ExoTiako</h2>
+      <p>Goûtez nos spécialités exotiques venant des îles et de tout horizon. ExoTiako met en avant des saveurs conviviales, généreuses et inspirées de Madagascar.</p>
     </section>
   </main>
 
-  <aside class="cart-panel" id="cartPanel" aria-hidden="true">
-    <div class="cart-backdrop" id="closeCartBackdrop"></div>
-    <div class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
-      <div class="cart-header">
-        <h2 id="cartTitle">Votre panier</h2>
-        <button class="icon-button" id="closeCartBtn" type="button" aria-label="Fermer le panier">×</button>
-      </div>
-      <div id="cartItems" class="cart-items"></div>
-      <div class="cart-footer">
-        <div class="total-row">
-          <span>Total estimé</span>
-          <strong id="cartTotal">0,00 €</strong>
-        </div>
-        <button class="checkout-button" id="checkoutBtn" type="button">Commander par email</button>
-        <button class="clear-button" id="clearCartBtn" type="button">Vider le panier</button>
-      </div>
-    </div>
-  </aside>
-
-  <dialog class="product-modal" id="productModal">
-    <button class="modal-close" id="closeModalBtn" type="button" aria-label="Fermer">×</button>
-    <div id="modalContent"></div>
-  </dialog>
-
-  <footer class="footer">
-    <strong>ExoTiako</strong>
-    <span>Produits exotiques · Commande artisanale · Version vitrine</span>
+  <footer id="contact">
+    <span>📍 Antananarivo, Madagascar</span>
+    <span>📞 +261 34 12 345 67</span>
+    <span>✉️ contact@exotiako.mg</span>
+    <span>© 2026 ExoTiako. Tous droits réservés.</span>
   </footer>
 
-  <script src="products.js"></script>
+  <dialog id="productModal" class="modal">
+    <button class="close" id="closeModal">×</button>
+    <div class="modal-content" id="modalContent"></div>
+  </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>

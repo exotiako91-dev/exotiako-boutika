@@ -1,43 +1,27 @@
-# ExoTiako - version statique
+# ExoTiako - site statique
 
-Site vitrine de produits exotiques en HTML, CSS et JavaScript, sans Node.js.
+Version sans backend et sans npm obligatoire. Compatible GitHub Pages.
 
 ## Tester localement
 
-Ouvrir directement `index.html` dans le navigateur.
-
-Ou depuis le terminal :
+Ouvrir directement `index.html` ou lancer :
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Puis ouvrir :
-
-```txt
-http://localhost:8000
-```
-
-## Modifier l'email de commande
-
-Dans `script.js`, remplacer :
-
-```js
-const sellerEmail = "votre-email@example.com";
-```
-
-par votre adresse email.
+Puis ouvrir : http://localhost:8000
 
 ## Modifier les produits
 
-Les produits sont dans `products.js`.
+Les produits sont dans `script.js`, tableau `products`.
 
-## Publier sur GitHub Pages
+Images principales :
 
-Copier tout le contenu de ce dossier à la racine du dépôt GitHub, puis :
+- `images/sambos.png`
+- `images/nems.png`
+- `images/piment-madagascar.png`
 
-```bash
-git add .
-git commit -m "Ajout version statique ExoTiako"
-git push origin main
-```
+## Email de commande
+
+Dans `script.js`, remplacer `contact@exotiako.mg` par votre adresse email.
